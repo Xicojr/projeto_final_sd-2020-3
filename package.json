@@ -1,0 +1,27 @@
+{
+  "name": "projeto_final",
+  "version": "1.0.0",
+  "description": "Aplicação para uma loja online de jogos de tabuleiro. Projeto voltado para obtenção de nota na disciplina de Sistemas Distribuidos.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xicojr/projeto_final_sd-2020-3.git"
+  },
+  "author": "Francisco das Chagas Peres Júnior e Rodrigo Gonçalves Cardoso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xicojr/projeto_final_sd-2020-3/issues"
+  },
+  "homepage": "https://github.com/Xicojr/projeto_final_sd-2020-3#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.5",
+    "grpc": "^1.24.3"
+  }
+}
