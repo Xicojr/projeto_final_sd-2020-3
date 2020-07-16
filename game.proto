@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package game;
+
+message Jogo {
+    string titulo = 1;
+    string tipo = 2;
+    string editora = 3;
+    float valor = 4;
+    int32 qtdEstoque = 5;
+}
+
+message Cliente {
+    int32 cpf = 1;
+    string nome = 2;
+    int32 cep = 3;
+    string endereco =4;
+}
+
+message ListaJogos {
+    repeated Jogo jogos = 1;
+}
+
+message Carrinho {
+    repeated Jogo jogos = 1;
+}
+
+message Pedido {
+    repeated Cliente cliente = 1;
+    repeated Carrinho carrinho = 2;
+}
+
+message Posicao {
+    int32 posicao = 1;
+}
+
+message Vazia { }
+
+service ServicoJogo {
+    rpc ListarJogos (Vazia) returns (ListaJogos);
+    rpc ConsultarJogo (Posicao) returns (Jogo);
+    rpc RegistrarJogo (Jogo) returns (Vazia);
+    rpc RemoverJogo (Posicao) returns (Vazia);
+    rpc RegistrarCliente (Cliente) returns (Vazia);
+    rpc ComprarJogo (Jogo) returns (Carrinho);
+    rpc FecharPedido (Pedido) returns (Vazia);
+}
